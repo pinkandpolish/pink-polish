@@ -39,6 +39,31 @@ const router = createBrowserRouter([
 const root = createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={router} />);
 
+// Vercel Web Analytics: track SPA route changes
+if (typeof window !== 'undefined' && 'va' in window) {
+	// Initial pageview
+	// @ts-ignore
+	window.va('pageview');
+
+	// Track subsequent navigations
+	window.addEventListener('popstate', () => {
+		// @ts-ignore
+		window.va('pageview');
+	});
+
+	// Also listen for pushState/replaceState by patching history methods
+	['pushState', 'replaceState'].forEach((method) => {
+		const orig = history[method];
+		// @ts-ignore
+		history[method] = function () {
+			const ret = orig.apply(this, arguments);
+			// @ts-ignore
+			window.va('pageview');
+			return ret;
+		};
+	});
+}
+
 // Add scroll-based header opacity toggle so header blends at top and becomes more opaque after scroll
 function initHeaderScroll() {
 	const header = document.querySelector('.site-header');

@@ -76,6 +76,16 @@ Environment variables to consider on Vercel:
 - Optional `ADMIN_SECRET` to protect the write endpoint.
 - Optional `KV_REST_API_URL`, `KV_REST_API_TOKEN` to enable KV storage.
 
+### Vercel Web Analytics
+
+This repo is configured to use Vercel Web Analytics.
+
+- `client/index.html` includes the script: `<script defer src="/_vercel/insights/script.js"></script>`.
+- `client/src/main.jsx` sends `va('pageview')` on initial load and on SPA route changes.
+- Analytics only sends events on Vercel deployments (production or preview URLs), not in local dev.
+
+To view analytics: open the project in Vercel > Analytics. No extra env vars are required for basic tracking.
+
 ## Skip the backend: Formspree (fastest paid option)
 
 - Use Formspree or a similar provider to receive form submissions without running the server.
