@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" role="img" aria-labelledby="title desc">
+	<title id="title">Halo</title>
+	<desc id="desc">Halo wordmark with cyan neon glow</desc>
+
+	<!-- Background for visual debugging (transparent by default) -->
+	<rect width="100%" height="100%" fill="none" />
+
+	<!-- Neon glow filter -->
+	<defs>
+		<filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+			<feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1" />
+			<feColorMatrix in="blur1" type="matrix" values="0 0 0 0 0.482  0 0 0 0 0.886  0 0 0 0 0.949  0 0 0 1 0" result="cyan1"/>
+			<feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2" />
+			<feColorMatrix in="blur2" type="matrix" values="0 0 0 0 0.482  0 0 0 0 0.886  0 0 0 0 0.949  0 0 0 1 0" result="cyan2"/>
+			<feMerge>
+				<feMergeNode in="cyan2"/>
+				<feMergeNode in="cyan1"/>
+				<feMergeNode in="SourceGraphic"/>
+			</feMerge>
+		</filter>
+
+		<!-- Gradient sweep for subtle animated fill; static gradient for simplicity here -->
+		<linearGradient id="sweep" x1="0%" y1="50%" x2="100%" y2="50%">
+			<stop offset="0%" stop-color="#e7f6ff"/>
+			<stop offset="40%" stop-color="#8bb4ff"/>
+			<stop offset="50%" stop-color="#7be2f2"/>
+			<stop offset="60%" stop-color="#8bb4ff"/>
+			<stop offset="100%" stop-color="#e7f6ff"/>
+		</linearGradient>
+	</defs>
+
+	<!-- Wordmark using bold italic sans as a placeholder; replaced by your asset if needed -->
+	<g filter="url(#neon-glow)">
+		<text x="50%" y="58%" text-anchor="middle" dominant-baseline="middle"
+					font-family="Jost, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
+					font-size="128" font-style="italic" font-weight="800"
+					fill="url(#sweep)" stroke="#eaffff" stroke-width="1.2" paint-order="stroke fill">
+			Halo
+		</text>
+	</g>
+</svg>

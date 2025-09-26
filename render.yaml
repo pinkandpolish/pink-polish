@@ -1,0 +1,24 @@
+# Sample Render service manifest for the API
+# Replace names and regions as needed. See https://render.com/docs/manifest
+services:
+  - type: web
+    name: halo-redesign-api
+    env: docker
+    region: oregon
+    plan: starter
+    dockerfilePath: server/Dockerfile
+    branch: main
+    buildCommand: ''
+    startCommand: ''
+    envVars:
+      - key: PORT
+        value: '5002'
+      - key: DB_SERVER
+        fromDatabase:
+          name: halo-redesign-db
+      - key: EMAIL_USER
+        value: ''
+      - key: EMAIL_PASS
+        value: ''
+      - key: CORS_ORIGINS
+        value: ''
