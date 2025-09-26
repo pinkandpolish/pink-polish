@@ -1,18 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    },
-    {
-      "src": "api/*.js",
-      "use": "@vercel/node"
-    }
-  ],
+  "buildCommand": "npm --prefix client ci && npm --prefix client run build",
+  "outputDirectory": "client/dist",
   "routes": [
-    { "src": "/api/availability", "dest": "/api/availability.js" },
-    { "src": "/(.*)", "dest": "/client/dist/$1" }
+  { "src": "/api/availability", "dest": "/api/availability.js" },
+  { "handle": "filesystem" },
+  { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
