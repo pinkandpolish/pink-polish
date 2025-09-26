@@ -3,6 +3,7 @@
   "buildCommand": "npm --prefix client ci && npm --prefix client run build",
   "outputDirectory": "client/dist",
   "routes": [
+  { "src": "/_vercel/(.*)", "dest": "/_vercel/$1" },
   { "src": "/api/availability", "dest": "/api/availability.js" },
   { "handle": "filesystem" },
   { "src": "/(.*)", "dest": "/index.html" }
