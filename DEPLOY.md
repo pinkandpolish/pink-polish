@@ -86,6 +86,13 @@ This repo is configured to use Vercel Web Analytics.
 
 To view analytics: open the project in Vercel > Analytics. No extra env vars are required for basic tracking.
 
+### Vercel Speed Insights
+
+For non-Next.js apps (Vite/React here), Speed Insights works by including a script tag.
+
+- `client/index.html` includes: `<script defer src="/_vercel/speed-insights/script.js"></script>`
+- After deployment, visit a few pages on the production or preview URL. Data should appear under the Speed Insights tab.
+
 ## Skip the backend: Formspree (fastest paid option)
 
 - Use Formspree or a similar provider to receive form submissions without running the server.
