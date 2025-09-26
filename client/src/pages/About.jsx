@@ -5,7 +5,7 @@ const values = [
   {
     title: 'Graceful caretakers',
     description:
-      'Every attendant is background checked, insured, and trained to protect delicate décor, luxury finishes, and sentimental keepsakes.',
+  'Every attendant is thoughtfully selected and trained to protect delicate décor, luxury finishes, and sentimental keepsakes.',
   },
   {
     title: 'Feminine finishing touches',
