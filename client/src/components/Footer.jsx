@@ -49,7 +49,7 @@ export default function Footer() {
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{verticalAlign: 'middle'}}>
                 <path d="M4.5 3.5A2 2 0 0 1 7 3c.2.2.4.5.5.8l1.2 2.7a2 2 0 0 1-.4 2.2l-.7.7a12.5 12.5 0 0 0 5.2 5.2l.7-.7a2 2 0 0 1 2.2-.4l2.7 1.2c.3.1.6.3.8.5a2 2 0 0 1-.5 2.5l-1.2 1.2c-.7.7-1.7 1-2.7.7C7.7 18.2 2 12.3 2.2 6.2c-.2-1 .1-2 1-2.7l1.3-1.2z" fill="#f06292" stroke="#fff" strokeWidth="1.5" strokeLinejoin="round"/>
               </svg>
-              123-456-7890
+              <a href="tel:+17794039117" style={{ color: 'inherit', textDecoration: 'none' }}>(779)-403-9117</a>
             </span>
         </div>
       </div>
