@@ -911,6 +911,20 @@ section{
   color:var(--color-primary); 
   font-weight:700; 
   line-height:1; 
+  /* Ensure no inherited background from .about-card li:before */
+  background:none !important;
+  background-image:none !important;
+  box-shadow:none;
+  border:0;
+  /* occupy the first grid column and align nicely */
+  display:inline-grid;
+  place-items:center;
+  width:18px; height:18px;
+}
+/* Higher-specificity guard when lists live inside about cards */
+.about-card .legal-list li:before{ 
+  background:none !important;
+  background-image:none !important;
 }
 .legal-details{ 
   margin-top: 8px; 
