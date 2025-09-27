@@ -885,6 +885,49 @@ section{
   hyphens: auto;
 }
 
+/* Legal pages (Privacy, Terms) */
+.legal-page .legal-updated{ 
+  text-align:center; 
+  color: var(--color-muted); 
+  margin: 18px 0 0; 
+  font-size:.95rem;
+}
+.legal-list{ 
+  list-style:none; 
+  padding:0; 
+  margin:14px 0 0; 
+  display:grid; 
+  gap:10px; 
+  color:#402531cc; 
+}
+.legal-list li{ 
+  display:grid; 
+  grid-template-columns: 18px 1fr; 
+  align-items:start; 
+  column-gap:10px; 
+}
+.legal-list li:before{ 
+  content:"✔"; 
+  color:var(--color-primary); 
+  font-weight:700; 
+  line-height:1; 
+}
+.legal-details{ 
+  margin-top: 8px; 
+}
+.legal-details .legal-sections{ 
+  display:grid; 
+  gap:18px 20px; 
+}
+.legal-details .legal-sections h3{ 
+  margin:0 0 6px; 
+  font-weight:600; 
+}
+.legal-details .legal-sections p{ 
+  margin:0; 
+  color:#402531cc; 
+}
+
 /* Booking page intro styled like other cards */
 .booking-intro{
   background:#fff;
