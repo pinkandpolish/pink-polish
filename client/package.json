@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@fontsource/jost": "^5.2.6",
-    "@vercel/analytics": "^1.5.0",
+    "@vercel/analytics": "^1.6.1",
     "react-router-dom": "^6.27.0"
   }
 }

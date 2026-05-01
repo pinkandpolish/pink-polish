@@ -39,35 +39,6 @@ const router = createBrowserRouter([
 const root = createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={router} />);
 
-// Vercel Web Analytics: track SPA route changes by watching location
-if (typeof window !== 'undefined') {
-	const sendPageview = () => {
-		if (typeof window.va === 'function') {
-			// @ts-ignore
-			window.va('pageview');
-		}
-	};
-	// Initial pageview
-	sendPageview();
-
-	let lastPath = location.pathname + location.search + location.hash;
-	const notifyIfChanged = () => {
-		const current = location.pathname + location.search + location.hash;
-		if (current !== lastPath) {
-			lastPath = current;
-			sendPageview();
-		}
-	};
-	// popstate for back/forward
-	window.addEventListener('popstate', notifyIfChanged);
-	// use a small MutationObserver on the root to catch Router updates
-	const rootEl = document.getElementById('root');
-	if (rootEl) {
-		const mo = new MutationObserver(() => notifyIfChanged());
-		mo.observe(rootEl, { childList: true, subtree: true });
-	}
-}
-
 // Add scroll-based header opacity toggle so header blends at top and becomes more opaque after scroll
 function initHeaderScroll() {
 	const header = document.querySelector('.site-header');

@@ -1,12 +1,20 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import './styles.css';
 import Footer from './components/Footer.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 
+function VercelAnalytics() {
+  const { pathname, search, hash } = useLocation();
+  const path = pathname + search + hash;
+  return <Analytics framework="react-router-dom" route={pathname} path={path} />;
+}
+
 export default function App() {
   return (
     <div className="app-shell">
+      <VercelAnalytics />
       <ScrollToTop />
 
       <header className="site-header" aria-label="Primary navigation">
